@@ -7,8 +7,13 @@ jobs:
     - name: Checkout PR
       uses: actions/checkout@v2
       
-    - name: test build
+    - name: Test Build
       uses: jupyterhub/repo2docker-action@master
       with:
         NO_PUSH: 'true'
         IMAGE_NAME: "scottyhq/github-action"
+
+    - name: Report Image Size and Conda Packages
+      run: |
+        docker images
+        docker run ${DOCKER_ORG}/${{ matrix.IMAGE }}:PR conda list --export

@@ -10,7 +10,6 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                              dask-labextension
 
 #install from conda-forge?
-pip install nbresuse
 jupyter serverextension enable --py nbresuse --sys-prefix
 jupyter nbextension install --py nbresuse --sys-prefix
 jupyter nbextension enable --py nbresuse --sys-prefix
